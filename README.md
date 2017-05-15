@@ -1,11 +1,11 @@
 # SSO
  on the origin root run ==> npm install express body-parser morgan mongoose jsonwebtoken --save
  
- download mongodb https://www.mongodb.com/download-center#community 
+ download mongodb  https://www.mongodb.com/download-center#community and run the .exe or .msi file
  
- to run mongodb got to C:\Program Files\MongoDB\Server\3.4\bin and run command ==>  mongod
+ to run mongod  got to C:\Program Files\MongoDB\Server\3.4\bin and run command ==>  mongod
  
- install robomongo https://robomongo.org/ and create a connection with name SSO_Test
+ install robomongo https://robomongo.org/ and create a db with name SSO_Test containing a user collection {name:'test', password:'password'}
  
  go to the root again and run ==> node server.js
  
