@@ -1,0 +1,7 @@
+{
+  "name": "node-token-jwt",
+  "main": "server.js",
+  "dependencies": {
+    "mongodb": "^2.2.26"
+  }
+}
