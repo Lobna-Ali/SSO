@@ -28,6 +28,9 @@ app.use(morgan('dev'));
 // routes ================
 // =======================
 // basic route
+app.get('/', function(req, res) {
+    res.send('Hello! The API is at http://localhost:' + port + '/api');
+});
 
 app.get('/setup', function(req, res) {
 
@@ -77,7 +80,7 @@ apiRoutes.post('/authenticate', function(req, res) {
 
         // if user is found and password is right
         // create a token
-        var token = jwt.sign(user, app.get('superSecret'));
+        var token = jwt.sign(user, app.get('superSecret'),{expiresIn : 1440});
 
         // return the information including token as JSON
         res.json({
@@ -107,7 +110,7 @@ apiRoutes.use(function(req, res, next) {
         return res.json({ success: false, message: 'Failed to authenticate token.' });    
       } else {
         // if everything is good, save to request for use in other routes
-        req.decoded = decoded;    
+        req.decoded = decoded;  
         next();
       }
     });
